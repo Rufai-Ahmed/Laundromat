@@ -19,17 +19,17 @@ const mongoose_1 = require("mongoose");
 const createServices = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { serviceproviderID } = req.params;
-        const { name, price } = req.body;
+        const { service, price } = req.body;
         const find = yield serviceProviderModel_1.default.findById(serviceproviderID);
-        const service = yield serviceModel_1.default.create({
-            name,
+        const servic = yield serviceModel_1.default.create({
+            service,
             price,
         });
         find === null || find === void 0 ? void 0 : find.services.push(new mongoose_1.Types.ObjectId(service._id));
         find === null || find === void 0 ? void 0 : find.save();
         return res.status(200).json({
             message: "services created",
-            data: service,
+            data: servic,
         });
     }
     catch (error) {

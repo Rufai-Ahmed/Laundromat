@@ -8,12 +8,12 @@ const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const dbConfig_1 = require("./utils/dbConfig");
 dotenv_1.default.config();
-const Mainapp_1 = require("./Mainapp");
+const mainApp_1 = require("./mainApp");
 const app = (0, express_1.default)();
 const port = 7776;
 app.use((0, cors_1.default)({ origin: process.env.APP_URL }));
 app.use(express_1.default.json());
-(0, Mainapp_1.Mainapp)(app);
+(0, mainApp_1.Mainapp)(app);
 const server = app.listen(port, () => {
     console.log("server is actice");
     (0, dbConfig_1.dbConfig)();
