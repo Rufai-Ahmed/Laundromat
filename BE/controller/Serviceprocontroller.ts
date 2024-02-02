@@ -1,55 +1,57 @@
 import { Request, Response } from "express";
+import { Status } from "../enums";
 import crypto from "crypto";
 import bcrypt from "bcrypt";
-import customerModel from "../Model/customerModel";
-import { Status } from "../enums";
+import serviceProviderModel from "../Model/serviceProviderModel";
 import { verifiedEmail } from "../utils/email";
 import jwt from "jsonwebtoken";
 
-export const Createcustomer = async (req: Request, res: Response) => {
+export const CreateServiceprovider = async (req: Request, res: Response) => {
   try {
-    const { name, email, password } = req.body; //sign up as custoimer
+    const { name, email, password } = req.body; //sign up as service provider
 
     const OTP = crypto.randomBytes(2).toString("hex");
     const salt = await bcrypt.genSalt(10);
     const encrypt = await bcrypt.hash(password, salt);
 
-    const custoimer = await customerModel.create({
+    const serviceProvider = await serviceProviderModel.create({
       name,
       email,
       password: encrypt,
       token: OTP,
-      status: Status.customer,
+      status: Status.serviceProvuder,
     });
 
-    verifiedEmail(custoimer);
+    verifiedEmail(serviceProvider);
 
     return res.status(200).json({
-      message: "customer created",
-      data: custoimer,
+      message: "service provider created",
+      data: serviceProvider,
     });
   } catch (error: any) {
+    console.log(error);
+
     return res.status(404).json({
       message: `${error.message} is the error that occured`,
     });
   }
 };
 
-export const Verifycustomer = async (req: Request, res: Response) => {
+export const VerifyServiceprovider = async (req: Request, res: Response) => {
   try {
     const { token } = req.body; //verify with token sent to email
 
-    const check = await customerModel.findOne({ token });
+    const check = await serviceProviderModel.findOne({ token });
 
     if (check) {
-      await customerModel.findByIdAndUpdate(
+      await serviceProviderModel.findByIdAndUpdate(
         check._id,
         { token: "" },
         { new: true }
       );
 
       return res.status(200).json({
-        message: "customer verified",
+        message: "service provider verified",
       });
     } else {
       return res.status(404).json({
@@ -63,11 +65,11 @@ export const Verifycustomer = async (req: Request, res: Response) => {
   }
 };
 
-export const Logincustomer = async (req: Request, res: Response) => {
+export const LoginServiceProvider = async (req: Request, res: Response) => {
   try {
     const { email, password } = req.body; // login with password and email
 
-    const check = await customerModel.findOne({ email });
+    const check = await serviceProviderModel.findOne({ email });
 
     if (check) {
       const pass = await bcrypt.compare(password, check.password);
@@ -101,16 +103,29 @@ export const Logincustomer = async (req: Request, res: Response) => {
     });
   }
 };
-
-export const Readonecustomer = async (req: Request, res: Response) => {
+export const ReadoneServiceProvider = async (req: Request, res: Response) => {
   try {
-    const { customerID } = req.body; // find by id
+    const { serviceID } = req.body; // find by id
 
-    const check = await customerModel.findById(customerID);
+    const check = await serviceProviderModel.findById(serviceID);
 
     return res.status(200).json({
       message: "one user read successfully",
       data: check,
+    });
+  } catch (error: any) {
+    return res.status(404).json({
+      message: `${error.message} is the error that occured`,
+    });
+  }
+};
+export const ReadallServiceProvider = async (req: Request, res: Response) => {
+  try {
+    const serviceProviders = await serviceProviderModel.find();
+
+    return res.status(200).json({
+      message: "service provider sigfned in",
+      data: serviceProviders,
     });
   } catch (error: any) {
     return res.status(404).json({
