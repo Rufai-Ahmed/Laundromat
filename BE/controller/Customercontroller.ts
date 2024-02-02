@@ -73,9 +73,13 @@ export const Logincustomer = async (req: Request, res: Response) => {
       const pass = await bcrypt.compare(password, check.password);
       if (pass) {
         if (check.token === "") {
-          const login = jwt.sign({ id: check._id }, "JUSTASECRET", {
-            expiresIn: "5D",
-          });
+          const login = jwt.sign(
+            { id: check._id, status: Status.customer },
+            "JUSTASECRET",
+            {
+              expiresIn: "5D",
+            }
+          );
           return res.status(404).json({
             message: "welcome to our platform ",
             data: login,
