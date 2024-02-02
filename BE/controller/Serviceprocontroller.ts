@@ -78,7 +78,7 @@ export const LoginServiceProvider = async (req: Request, res: Response) => {
           const login = jwt.sign({ id: check._id }, "JUSTASECRET", {
             expiresIn: "5D",
           });
-          return res.status(404).json({
+          return res.status(200).json({
             message: "welcome to our platform ",
             data: login,
           });
