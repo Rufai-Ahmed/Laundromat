@@ -5,8 +5,8 @@ import morgan from "morgan";
 import session from "express-session";
 import cors from "cors";
 import dotenv from "dotenv";
-import { mainApp } from "./mainApp";
-import { dbConfig } from "./utils/dbConfig";
+// import { mainApp } from "./mainApp";
+// import { dbConfig } from "./utils/dbConfig";
 dotenv.config();
 
 import { rateLimit } from "express-rate-limit";
@@ -60,11 +60,11 @@ app.use(
   })
 );
 
-mainApp(app);
+// mainApp(app);
 const server = app.listen(process.env.PORT || port, () => {
   console.clear();
   console.log();
-  dbConfig();
+  // dbConfig();
 });
 
 process.on("uncaughtException", (error: Error) => {
