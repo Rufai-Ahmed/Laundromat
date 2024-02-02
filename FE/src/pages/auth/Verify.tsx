@@ -26,11 +26,11 @@ const Verify = () => {
                 click1 ? "-top-7" : "top-3 left-3"
               }`}
             >
-              token
+              Verification Token
             </label>
             <input
               type="text"
-              placeholder="enter verification token"
+              placeholder=""
               value={token}
               onChange={(e) => setToken(e.target.value)}
               onBlur={() => {

@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { LoginProvider } from "../../APIs/clientAPI";
+import { jwtDecode } from "jwt-decode";
+
 export const Login = () => {
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
@@ -12,6 +14,8 @@ export const Login = () => {
   const handleSubmit = () => {
     LoginProvider({ email, password }).then((res) => {
       console.log("thid is login", res);
+      const decode: any = jwtDecode(res?.data)?.id;
+      console.log(decode);
     });
   };
 
@@ -68,13 +72,13 @@ export const Login = () => {
               }}
               className="btn btn-primary text-white text-[17px] bg-blue-600 mt-10 w-full"
             >
-              Register
+              Login
             </button>
 
             <center className="mt-3">
-              Have an account?{" "}
-              <NavLink className="text-blue-600" to="/auth/login/client">
-                Log in here
+              Don't have an account?{" "}
+              <NavLink className="text-blue-600" to="/auth/register">
+                Register here
               </NavLink>
             </center>
           </div>
