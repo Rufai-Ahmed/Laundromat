@@ -1,11 +1,22 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { verifyProvider } from "../../APIs/clientAPI";
 
 const Verify = () => {
+  const navigate = useNavigate();
   const [click1, setClick1] = useState<boolean>(false);
   const [token, setToken] = useState<string>("");
+  const Handlesubmit = () => {
+    verifyProvider({ token: token })
+      .then((res) => {
+        console.log(res, "verified");
+      })
+      .then(() => {
+        navigate("/auth/login");
+      });
+  };
   return (
-    <div>
+    <div className="w-full h-[100vh] flex items-center justify-center">
       {" "}
       <div className="w-full flex justify-center ">
         <div className="w-[400px] flex items-center space-y-10 flex-col">
@@ -15,11 +26,11 @@ const Verify = () => {
                 click1 ? "-top-7" : "top-3 left-3"
               }`}
             >
-              Password
+              token
             </label>
             <input
               type="text"
-              placeholder=""
+              placeholder="enter verification token"
               value={token}
               onChange={(e) => setToken(e.target.value)}
               onBlur={() => {
@@ -30,8 +41,11 @@ const Verify = () => {
               }}
               className="input input-bordered bg-white input-info w-full "
             />
-            <button className="btn btn-primary text-white text-[17px] bg-blue-600 mt-10 w-full">
-              Register
+            <button
+              className="btn btn-primary text-white text-[17px] bg-blue-600 mt-10 w-full"
+              onClick={Handlesubmit}
+            >
+              Verify
             </button>
 
             <center className="mt-3">
