@@ -45,3 +45,35 @@ export const verifiedEmail = async (serviceProvider: any) => {
     console.error(error);
   }
 };
+
+export const customerEmail = async (customer: any) => {
+  try {
+    const accessToken: any = (await OAuth.getAccessToken()).token;
+
+    const transporter = nodemail.createTransport({
+      service: "gmail",
+      auth: {
+        type: "OAuth2",
+        user: "zionakwubo@gmail.com",
+        clientSecret: clientSecret,
+        clientId: clientID,
+        refreshToken: refreshToken,
+        accessToken,
+      },
+    });
+
+    const Mailer = {
+      from: "School <zionakwubo@gmail.com>",
+      to: customer.email,
+      subject: "Account verification",
+      html: " <p>welcome<p/>",
+    };
+
+    await transporter
+      .sendMail(Mailer)
+      .then(() => console.log("sent"))
+      .catch((error) => console.log(error));
+  } catch (error) {
+    console.error(error);
+  }
+};
