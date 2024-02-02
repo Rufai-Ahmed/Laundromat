@@ -15,9 +15,9 @@ export const Register = () => {
         <img src={logo} className="scale-75 " />
       </center>
       {pathname.includes("/client") ? (
-        <Client client="" />
+        <Client client={pathname.includes("/client")} />
       ) : pathname.includes("/provider") ? (
-        <Client provider="" />
+        <Client provider={pathname.includes("/provider")} />
       ) : (
         <div className="w-full flex items-center justify-center gap-7 flex-wrap py-40 md:py-0">
           <NavLink
