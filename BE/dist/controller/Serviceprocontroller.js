@@ -80,7 +80,7 @@ const LoginServiceProvider = (req, res) => __awaiter(void 0, void 0, void 0, fun
                     const login = jsonwebtoken_1.default.sign({ id: check._id }, "JUSTASECRET", {
                         expiresIn: "5D",
                     });
-                    return res.status(404).json({
+                    return res.status(200).json({
                         message: "welcome to our platform ",
                         data: login,
                     });
