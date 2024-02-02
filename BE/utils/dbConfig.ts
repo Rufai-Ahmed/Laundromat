@@ -1,6 +1,6 @@
 import { connect } from "mongoose";
 
-const URL: string = process.env.DATABASE_URL!;
+const URL: string = "mongodb://127.0.0.1:27017/spinConnectDB";
 
 export const dbConfig = () => {
   try {

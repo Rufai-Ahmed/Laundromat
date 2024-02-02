@@ -1,4 +1,4 @@
-import { Schema, Types, model } from "mongoose";
+import { Document, Schema, Types, model } from "mongoose";
 
 interface iServiceProvider {
   email: string;
@@ -6,6 +6,8 @@ interface iServiceProvider {
   token: string;
   status: string;
   verified: boolean;
+
+  services: Array<{}>;
 }
 
 interface iServiceProviderData extends iServiceProvider, Document {}
@@ -29,10 +31,15 @@ const serviceProviderModel = new Schema<iServiceProviderData>(
       default: false,
     },
     status: {
-        types: String
-    }
-      
-    
+      type: String,
+    },
+
+    services: [
+      {
+        type: Types.ObjectId,
+        ref: "services",
+      },
+    ],
   },
   { timestamps: true }
 );
