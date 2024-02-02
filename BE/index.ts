@@ -8,7 +8,7 @@ import { Mainapp } from "./mainApp";
 const app: Application = express();
 const port: number = 7776;
 
-app.use(cors({ origin: process.env.APP_URL }));
+app.use(cors());
 app.use(express.json());
 
 Mainapp(app);
