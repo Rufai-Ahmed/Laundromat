@@ -31,15 +31,15 @@ const serviceProviderModel = new Schema<iServiceProviderData>(
       default: false,
     },
     status: {
-      types: String,
+      type: String,
     },
 
-    // services: [
-    //   {
-    //     types: Types.ObjectId,
-    //     ref: "services",
-    //   },
-    // ],
+    services: [
+      {
+        type: Types.ObjectId,
+        ref: "services",
+      },
+    ],
   },
   { timestamps: true }
 );
