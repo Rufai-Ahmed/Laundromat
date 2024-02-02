@@ -34,10 +34,12 @@ const serviceProviderModel = new Schema<iServiceProviderData>(
       types: String,
     },
 
-    services: [{
-      types: Types.ObjectId,
-      ref: "services"
-    }],
+    // services: [
+    //   {
+    //     types: Types.ObjectId,
+    //     ref: "services",
+    //   },
+    // ],
   },
   { timestamps: true }
 );

@@ -29,6 +29,8 @@ export const CreateServiceprovider = async (req: Request, res: Response) => {
       data: serviceProvider,
     });
   } catch (error: any) {
+    console.log(error);
+
     return res.status(404).json({
       message: `${error.message} is the error that occured`,
     });
@@ -39,7 +41,7 @@ export const VerifyServiceprovider = async (req: Request, res: Response) => {
   try {
     const { token } = req.body; //verify with token sent to email
 
-    const check = await serviceProviderModel.findOne(token);
+    const check = await serviceProviderModel.findOne({ token });
 
     if (check) {
       await serviceProviderModel.findByIdAndUpdate(
