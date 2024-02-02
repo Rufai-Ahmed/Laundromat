@@ -1,5 +1,13 @@
+import Header from "./Header";
+import Hero from "./Hero";
+
 const HomeScreen = () => {
-  return <div>HomeScreen</div>;
+	return (
+		<div>
+			<Header />
+			<Hero />
+		</div>
+	);
 };
 
 export default HomeScreen;
