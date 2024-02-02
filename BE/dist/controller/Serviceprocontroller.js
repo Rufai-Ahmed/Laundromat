@@ -51,7 +51,7 @@ const VerifyServiceprovider = (req, res) => __awaiter(void 0, void 0, void 0, fu
         const { token } = req.body; //verify with token sent to email
         const check = yield serviceProviderModel_1.default.findOne({ token });
         if (check) {
-            yield serviceProviderModel_1.default.findByIdAndUpdate(check._id, { token: "" }, { new: true });
+            yield serviceProviderModel_1.default.findByIdAndUpdate(check._id, { token: "", verified: true }, { new: true });
             return res.status(200).json({
                 message: "service provider verified",
             });
