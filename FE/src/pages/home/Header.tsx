@@ -1,5 +1,6 @@
 import { FaAngleDown } from "react-icons/fa";
 import { useState } from "react";
+import pix from "../../Assets/logoname.png";
 
 const Header = () => {
 	const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -9,9 +10,14 @@ const Header = () => {
 	};
 
 	return (
-		<div className="w-full h-[10vh]  flex justify-center items-center">
+		<div className="w-full h-[10vh] bg-[#F4F9FC]  flex justify-center items-center">
 			<div className="w-[97%] h-[90%] justify-between items-center flex">
-				<div>LOGO</div>
+				<img
+					src={pix}
+					alt=""
+					className="w-[10%]"
+				/>
+
 				<div className="flex justify-between items-center w-[30%]">
 					<div className="cursor-pointer">Home</div>
 					<div className="cursor-pointer">About</div>
