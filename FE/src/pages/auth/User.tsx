@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { registerClient } from "../../APIs/clientAPI";
 
 interface iUser {
   client?: boolean;
@@ -9,16 +10,44 @@ interface iUser {
 const User: FC<iUser> = ({ client, provider }) => {
   const [click, setClick] = useState(false);
   const [click1, setClick1] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  client?.at(0);
+  const handleSubmit = () => {
+    if (client) {
+      registerClient({ email, password, name }).then((res: any) => {
+        console.log("this is res", res);
+      });
+    } else if (provider) {
+    }
+  };
 
   return (
     <div>
       {" "}
       <div className="w-full flex justify-center ">
         <div className="w-[400px] flex items-center space-y-10 flex-col">
+          <div
+            className="relative w-full"
+            onClick={() => setClick(true)}
+            onBlur={() => setClick(email ? true : false)}
+          >
+            <label
+              className={`absolute transition-all duration-300 ${
+                click ? "-top-7" : "top-3 left-3"
+              }`}
+            >
+              name
+            </label>
+            <input
+              type="text"
+              placeholder=""
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              className="input input-bordered bg-white input-info w-full "
+            />
+          </div>
           <div
             className="relative w-full"
             onClick={() => setClick(true)}
@@ -60,7 +89,13 @@ const User: FC<iUser> = ({ client, provider }) => {
               }}
               className="input input-bordered bg-white input-info w-full "
             />
-            <button className="btn btn-primary text-white text-[17px] bg-blue-600 mt-10 w-full">
+            <button
+              onClick={() => {
+                handleSubmit();
+                console.log("first");
+              }}
+              className="btn btn-primary text-white text-[17px] bg-blue-600 mt-10 w-full"
+            >
               Register
             </button>
 
