@@ -1,29 +1,66 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { LoginProvider } from "../../APIs/clientAPI";
-import { jwtDecode } from "jwt-decode";
+import { FC, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { registerClient, registerProvider } from "../../APIs/clientAPI";
 
-export const Login = () => {
+interface iUser {
+  client?: boolean;
+  provider?: boolean;
+}
+
+const User: FC<iUser> = ({ client, provider }) => {
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
   const [click1, setClick1] = useState(false);
+  const [click2, setClick2] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
-    LoginProvider({ email, password }).then((res) => {
-      console.log("thid is login", res);
-      const decode: any = jwtDecode(res?.data)?.id;
-      console.log(decode);
-    });
+    if (client) {
+      registerClient({ email, password, name })
+        .then((res: any) => {
+          console.log("this is res", res);
+        })
+        .then(() => {
+          navigate("/auth/verify");
+        });
+    } else if (provider) {
+      registerProvider({ email, password, name })
+        .then((res) => {
+          console.log("this is provider", res);
+        })
+        .then(() => {
+          navigate("/auth/verify");
+        });
+    }
   };
 
   return (
-    <div className="w-full h-[100vh] flex items-center justify-center">
+    <div>
       {" "}
       <div className="w-full flex justify-center ">
         <div className="w-[400px] flex items-center space-y-10 flex-col">
+          <div
+            className="relative w-full"
+            onClick={() => setClick2(true)}
+            onBlur={() => setClick2(name ? true : false)}
+          >
+            <label
+              className={`absolute transition-all duration-300 ${
+                click2 ? "-top-7" : "top-3 left-3"
+              }`}
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              placeholder=""
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              className="input input-bordered bg-white input-info w-full "
+            />
+          </div>
           <div
             className="relative w-full"
             onClick={() => setClick(true)}
@@ -72,13 +109,13 @@ export const Login = () => {
               }}
               className="btn btn-primary text-white text-[17px] bg-blue-600 mt-10 w-full"
             >
-              Login
+              Register
             </button>
 
             <center className="mt-3">
-              Don't have an account?{" "}
-              <NavLink className="text-blue-600" to="/auth/register">
-                Register here
+              Have an account?{" "}
+              <NavLink className="text-blue-600" to="/auth/login/client">
+                Log in here
               </NavLink>
             </center>
           </div>
@@ -87,3 +124,5 @@ export const Login = () => {
     </div>
   );
 };
+
+export default User;
