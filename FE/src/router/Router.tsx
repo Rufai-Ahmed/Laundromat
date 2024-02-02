@@ -4,9 +4,9 @@ import { Layout } from "../pages/auth/Layout";
 import { Register } from "../pages/auth/Register";
 import { Login } from "../pages/auth/Login";
 import Verify from "../pages/auth/Verify";
-import DashLayout from "../DashBoard.tsx/DashLayout";
-import DashBoard from "../DashBoard.tsx/Dashboard";
-import HistoryCard from "../DashBoard.tsx/HistoryCard";
+import DashLayout from "../pages/DashBoard/DashLayout";
+import DashBoard from "../pages/DashBoard/Dashboard";
+import HistoryCard from "../pages/DashBoard/HistoryCard";
 
 export const Router = createBrowserRouter([
   {
