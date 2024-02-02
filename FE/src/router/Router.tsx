@@ -20,6 +20,11 @@ export const Router = createBrowserRouter([
       },
       {
         index: true,
+        path: "register/:type",
+        element: <Register />,
+      },
+      {
+        index: true,
         path: "login",
         element: <Login />,
       },
