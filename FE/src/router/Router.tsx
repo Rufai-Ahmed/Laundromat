@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
 import HomeScreen from "../pages/home/HomeScreen";
 import { Layout } from "../pages/auth/Layout";
 import { Register } from "../pages/auth/Register";
