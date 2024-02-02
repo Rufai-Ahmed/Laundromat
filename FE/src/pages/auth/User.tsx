@@ -2,8 +2,8 @@ import { FC, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 interface iUser {
-  client?: string;
-  provider?: string;
+  client?: boolean;
+  provider?: boolean;
 }
 
 const User: FC<iUser> = ({ client, provider }) => {
@@ -11,6 +11,8 @@ const User: FC<iUser> = ({ client, provider }) => {
   const [click1, setClick1] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  client?.at(0);
 
   return (
     <div>
