@@ -1,12 +1,12 @@
-import TestQuestion from "./TestQuestion";
+import { RouterProvider } from "react-router-dom";
+import { Router } from "./router/Router";
 
 document.title = "Homescreen";
 
 function App() {
   return (
     <div>
-      <TestQuestion />
-      {/* <Test /> */}
+      <RouterProvider router={Router} />
     </div>
   );
 }
