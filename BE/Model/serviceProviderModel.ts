@@ -4,7 +4,7 @@ interface iServiceProvider {
   email: string;
   password: string;
   token: string;
-  status: Array<{}>;
+  status: string;
   verified: boolean;
 }
 
