@@ -1,12 +1,11 @@
-import { Document, Schema, model } from "mongoose"
+import { Document, Schema, model } from "mongoose";
 
-
-interface iService{
-    service: string
-    price: number
+interface iService {
+  service: string;
+  price: number;
 }
 
-interface iServiceData extends iService, Document{}
+interface iServiceData extends iService, Document {}
 
 const serviceModel = new Schema<iServiceData>(
   {
@@ -21,5 +20,4 @@ const serviceModel = new Schema<iServiceData>(
   { timestamps: true }
 );
 
-
-export default model<iServiceData>("service", serviceModel);
+export default model<iServiceData>("services", serviceModel);
