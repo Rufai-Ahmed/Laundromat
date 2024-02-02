@@ -32,7 +32,11 @@ export const readoneServices = async (req: Request, res: Response) => {
   try {
     const { servicerID } = req.params;
 
-    const service = await serviceProviderModel.findOne({ servicerID });
+    const service = await serviceProviderModel
+      .findOne({ servicerID })
+      .populate({
+        path: "services",
+      });
 
     return res.status(200).json({
       message: "one services found",
