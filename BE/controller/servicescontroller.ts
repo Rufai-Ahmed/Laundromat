@@ -6,12 +6,12 @@ import { Types } from "mongoose";
 export const createServices = async (req: Request, res: Response) => {
   try {
     const { serviceproviderID } = req.params;
-    const { name, price } = req.body;
+    const { service, price } = req.body;
 
     const find = await serviceProviderModel.findById(serviceproviderID);
 
-    const service = await serviceModel.create({
-      name,
+    const servic = await serviceModel.create({
+      service,
       price,
     });
 
@@ -20,7 +20,7 @@ export const createServices = async (req: Request, res: Response) => {
 
     return res.status(200).json({
       message: "services created",
-      data: service,
+      data: servic,
     });
   } catch (error) {
     return res.status(404).json({
