@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { registerClient } from "../../APIs/clientAPI";
+import { NavLink, useNavigate } from "react-router-dom";
+import { registerClient, registerProvider } from "../../APIs/clientAPI";
 
 interface iUser {
   client?: boolean;
@@ -8,6 +8,7 @@ interface iUser {
 }
 
 const User: FC<iUser> = ({ client, provider }) => {
+  const navigate = useNavigate();
   const [click, setClick] = useState(false);
   const [click1, setClick1] = useState(false);
   const [name, setName] = useState("");
@@ -16,10 +17,21 @@ const User: FC<iUser> = ({ client, provider }) => {
 
   const handleSubmit = () => {
     if (client) {
-      registerClient({ email, password, name }).then((res: any) => {
-        console.log("this is res", res);
-      });
+      registerClient({ email, password, name })
+        .then((res: any) => {
+          console.log("this is res", res);
+        })
+        .then(() => {
+          navigate("/auth/verify");
+        });
     } else if (provider) {
+      registerProvider({ email, password, name })
+        .then((res) => {
+          console.log("this is provider", res);
+        })
+        .then(() => {
+          navigate("/auth/verify");
+        });
     }
   };
 
