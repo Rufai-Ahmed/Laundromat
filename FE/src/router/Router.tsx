@@ -3,6 +3,7 @@ import HomeScreen from "../pages/home/HomeScreen";
 import { Layout } from "../pages/auth/Layout";
 import { Register } from "../pages/auth/Register";
 import { Login } from "../pages/auth/Login";
+import Verify from "../pages/auth/Verify";
 
 export const Router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ export const Router = createBrowserRouter([
         index: true,
         path: "login",
         element: <Login />,
+      },
+      {
+        index: true,
+        path: "verify",
+        element: <Verify />,
       },
     ],
   },
