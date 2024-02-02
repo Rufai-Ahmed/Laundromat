@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { dbConfig } from "./utils/dbConfig";
 dotenv.config();
-import { Mainapp } from "./Mainapp";
+import { Mainapp } from "./mainApp";
 
 const app: Application = express();
 const port: number = 7776;

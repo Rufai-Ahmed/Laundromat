@@ -46,7 +46,7 @@ export const VerifyServiceprovider = async (req: Request, res: Response) => {
     if (check) {
       await serviceProviderModel.findByIdAndUpdate(
         check._id,
-        { token: "" },
+        { token: "", verified: true },
         { new: true }
       );
 

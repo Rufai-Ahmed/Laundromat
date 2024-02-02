@@ -4,6 +4,7 @@ interface iOrder {
   service: string;
   address: string;
   phone: string;
+  delivered: boolean;
 }
 
 interface iOrderData extends iOrder, Document {}
@@ -20,6 +21,7 @@ const orderModel = new Schema<iOrderData>(
     phone: {
       type: String,
     },
+    delivered: { type: Boolean, default: false },
   },
   { timestamps: true }
 );

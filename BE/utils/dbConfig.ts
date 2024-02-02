@@ -1,6 +1,7 @@
 import { connect } from "mongoose";
 
-const URL: string = "mongodb://127.0.0.1:27017/spinConnectDB";
+const URL: string =
+  "mongodb+srv://chidubem123:chidubem123@cluster0.cnqrjok.mongodb.net/spinCONNECTDB?retryWrites=true&w=majority";
 
 export const dbConfig = () => {
   try {
