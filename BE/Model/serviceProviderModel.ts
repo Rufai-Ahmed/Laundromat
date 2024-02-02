@@ -6,6 +6,8 @@ interface iServiceProvider {
   token: string;
   status: string;
   verified: boolean;
+
+  services: Array<{}>;
 }
 
 interface iServiceProviderData extends iServiceProvider, Document {}
@@ -29,10 +31,13 @@ const serviceProviderModel = new Schema<iServiceProviderData>(
       default: false,
     },
     status: {
-        types: String
-    }
-      
-    
+      types: String,
+    },
+
+    services: [{
+      types: Types.ObjectId,
+      ref: "services"
+    }],
   },
   { timestamps: true }
 );

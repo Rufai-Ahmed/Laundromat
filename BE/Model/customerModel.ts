@@ -7,6 +7,8 @@ interface iCustomer{
     token: string
     status: string
     verified: boolean
+
+    order: Array<{}>
 }
 
 interface iCustomerData extends iCustomer, Document{}
@@ -31,6 +33,11 @@ const customerModel = new Schema<iCustomerData>(
     status: {
       type: String,
     },
+
+    order:[ {
+      type: Types.ObjectId,
+      ref: "order"
+    }],
   },
   { timestamps: true }
 );
