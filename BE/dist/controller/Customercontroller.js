@@ -76,7 +76,7 @@ const Logincustomer = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             const pass = yield bcrypt_1.default.compare(password, check.password);
             if (pass) {
                 if (check.token === "") {
-                    const login = jsonwebtoken_1.default.sign({ id: check._id }, "JUSTASECRET", {
+                    const login = jsonwebtoken_1.default.sign({ id: check._id, status: enums_1.Status.customer }, "JUSTASECRET", {
                         expiresIn: "5D",
                     });
                     return res.status(404).json({
