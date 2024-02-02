@@ -8,7 +8,7 @@ const Hero = () => {
 	return (
 		<div className="w-full h-[95vh] bg-[#F4F9FC] justify-center items-center flex">
 			<div className="w-[97%] h-[97%] flex relative flex-wrap">
-				<div className="w-[100%]  lg:w-[45%] h-[100%] bg-blue-500 relative">
+				<div className="w-[100%]  lg:w-[45%] h-[100%] relative">
 					<img
 						src={pix}
 						alt=""
@@ -29,7 +29,7 @@ const Hero = () => {
 						</div>
 					</div>
 				</div>
-				<div className="w-[100%]  lg:w-[55%] h-[100%] bg-green-300 flex relative">
+				<div className="w-[100%]  lg:w-[55%] h-[100%]  relative">
 					<div className="absolute top-[64%] right-[60%] w-[35%] h-[12%] bg-yellow-500 rounded-3xl flex justify-center items-center">
 						<div className="w-[90%] flex ">
 							<div className="h bg-red-500 w-[25%] h-[50px] items-center justify-center flex rounded-xl">
