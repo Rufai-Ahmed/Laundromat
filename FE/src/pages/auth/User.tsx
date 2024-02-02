@@ -11,6 +11,7 @@ const User: FC<iUser> = ({ client, provider }) => {
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
   const [click1, setClick1] = useState(false);
+  const [click2, setClick2] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,15 +43,15 @@ const User: FC<iUser> = ({ client, provider }) => {
         <div className="w-[400px] flex items-center space-y-10 flex-col">
           <div
             className="relative w-full"
-            onClick={() => setClick(true)}
-            onBlur={() => setClick(email ? true : false)}
+            onClick={() => setClick2(true)}
+            onBlur={() => setClick2(name ? true : false)}
           >
             <label
               className={`absolute transition-all duration-300 ${
-                click ? "-top-7" : "top-3 left-3"
+                click2 ? "-top-7" : "top-3 left-3"
               }`}
             >
-              name
+              Name
             </label>
             <input
               type="text"
