@@ -39,7 +39,7 @@ export const Verifycustomer = async (req: Request, res: Response) => {
   try {
     const { token } = req.body; //verify with token sent to email
 
-    const check = await customerModel.findOne(token);
+    const check = await customerModel.findOne({ token });
 
     if (check) {
       await customerModel.findByIdAndUpdate(
