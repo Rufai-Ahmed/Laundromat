@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import SiderDashboard from "./SiderDashboard";
-import CreateStudies from "./CreateStudies";
 import { useSelector } from "react-redux";
 import Header2 from "./Header2";
 
@@ -25,7 +24,6 @@ const DashLayout = () => {
                 border: "1px solid rgba( 255, 255, 255, 0.18 )",
               }}
             >
-              <CreateStudies />
             </div>
           </div>
         )}

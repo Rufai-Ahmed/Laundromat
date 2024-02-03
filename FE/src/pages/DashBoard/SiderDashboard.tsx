@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 // import { changeToggle, changeToggleDisplay } from "../Global/reduxState";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import img from "../Assets/logo.png";
+import img from "../../Assets/logo.png";
 
 const SiderDashboard = () => {
   const dispatch = useDispatch();
