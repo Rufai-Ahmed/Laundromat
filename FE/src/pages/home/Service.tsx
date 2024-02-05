@@ -26,8 +26,9 @@ const Service = () => {
 						</div>
 						<div>
 							<p className="t text-center mb-[20px]">
-								Lorem ipsum dolor sit amet, consectetur adipiscing
-								elit. Ut elit tellus, luctus nec
+								👚🚗 Laundry piling up? We've got you! Schedule a
+								pickup, we'll handle the rest. Fresh, clean clothes
+								delivered to your door. Easy peasy! 🧺✨ #LaundryEase
 							</p>
 						</div>
 						<div className="flex items-center">
@@ -50,8 +51,10 @@ const Service = () => {
 						</div>
 						<div>
 							<p className="t text-center mb-[20px]">
-								Lorem ipsum dolor sit amet, consectetur adipiscing
-								elit. Ut elit tellus, luctus nec
+								Elevate your laundry game with our Wash and Fold
+								service! 🌟 Drop off, relax, and pick up neatly folded
+								freshness. Time-saving simplicity at its best! 🧺✨
+								#LaundryMadeEasy
 							</p>
 						</div>
 						<div className="flex items-center">
@@ -74,8 +77,9 @@ const Service = () => {
 						</div>
 						<div>
 							<p className="t text-center mb-[20px]">
-								Lorem ipsum dolor sit amet, consectetur adipiscing
-								elit. Ut elit tellus, luctus nec
+								👕✨ Introducing our Bulk Discount Bonanza! 🌟 Save
+								big on loads of freshness with our exclusive bulk
+								discounts. The more you launder, the more you save!!.
 							</p>
 						</div>
 						<div className="flex items-center">
@@ -98,8 +102,10 @@ const Service = () => {
 						</div>
 						<div>
 							<p className="t text-center mb-[20px]">
-								Lorem ipsum dolor sit amet, consectetur adipiscing
-								elit. Ut elit tellus, luctus nec
+								Discover the epitome of garment care with our Dry
+								Cleaning service! 🧼✨ We pamper your clothes with
+								precision, ensuring they emerge refreshed and ready to
+								make a lasting statement. #LaundryLuxury
 							</p>
 						</div>
 						<div className="flex items-center">

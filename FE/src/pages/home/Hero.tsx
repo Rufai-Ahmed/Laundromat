@@ -60,9 +60,9 @@ const Hero = () => {
 						</div>
 					</div>
 
-					<div className="absolute top-[23%] right-[50%] w-[250px]  h-[12%] bg-yellow-500 rounded-3xl flex justify-center items-center ">
+					<div className="absolute top-[23%] right-[45%] w-[270px]  h-[12%] bg-yellow-500 rounded-3xl flex justify-center items-center ">
 						<div className="w-[90%] flex">
-							<div className="h bg-red-500 w-[25%] h-[50px] items-center justify-center flex rounded-xl">
+							<div className="h bg-red-500 w-[60px] h-[50px] items-center justify-center flex rounded-xl">
 								<GiSurferVan
 									size={30}
 									className="text-white"

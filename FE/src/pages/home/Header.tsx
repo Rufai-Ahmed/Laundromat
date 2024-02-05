@@ -89,7 +89,7 @@ const Header = () => {
 				<img
 					src={pix}
 					alt=""
-					className="w-1/6"
+					className="w-[10%]"
 				/>
 
 				<div className="hidden md:flex justify-between items-center w-2/5">
@@ -102,10 +102,16 @@ const Header = () => {
 						Pages
 						<FaAngleDown className="cursor-pointer" />
 						{isDropdownOpen && (
-							<div className="dropdown-content absolute top-full left-0 bg-white border border-gray-300 rounded-md z-10">
-								<div className="py-2 px-4">Page 1</div>
-								<div className="py-2 px-4">Page 2</div>
-								<div className="py-2 px-4">Page 3</div>
+							<div className=" absolute top-full left-0 bg-white border border-gray-300 rounded-md z-10 w-[160px] h-[130px]">
+								<div className="py-2 px-4 font-bold hover:bg-slate-300 cursor-pointer hover:rounded-lg">
+									Service
+								</div>
+								<div className="py-2 px-4 font-bold hover:bg-slate-300 cursor-pointer hover:rounded-lg">
+									Price
+								</div>
+								<div className="py-2 px-4 font-bold hover:bg-slate-300 cursor-pointer hover:rounded-lg">
+									Testimonial
+								</div>
 							</div>
 						)}
 					</div>
