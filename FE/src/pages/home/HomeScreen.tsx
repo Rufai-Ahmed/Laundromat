@@ -1,6 +1,7 @@
 import Header from "./Header";
 import Hero from "./Hero";
 import Service from "./Service";
+import Work from "./Work";
 
 const HomeScreen = () => {
 	return (
@@ -8,6 +9,7 @@ const HomeScreen = () => {
 			<Header />
 			<Hero />
 			<Service />
+			<Work />
 		</div>
 	);
 };
