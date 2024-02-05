@@ -6,17 +6,17 @@ import pix3 from "../../Assets/clothIMG.png";
 
 const Service = () => {
 	return (
-		<div className="w-full min-h-[100%] justify-center items-center flex flex-wrap absolute max-sm:mt-[450px] mb-[450px]">
+		<div className="w-full min-h-[100%] justify-center items-center flex flex-wrap absolute max-sm:mt-[450px] max-lg:mt-[700px] max-md:mt-[530px] mb-[450px] ">
 			<div className="w-[97%] min-h-[90vh]  flex justify-center items-center flex-col">
 				<div className="text-[70px] font-extrabold">Our Services</div>
 
 				<div className="w-[100%] grid lg:grid-cols-4 md:grid-cols-2 gap-5  ">
-					<div className=" h-[400px] bg-[#E8F6FF] mt-[40px] rounded-xl flex justify-center items-center flex-col">
-						<div className="min-h-[30%] w-[40%] bg-[#FFFFFF] rounded-[50%] flex justify-center items-center border-orange-700">
+					<div className=" h-[100%] lg:h-[95%] bg-[#E8F6FF] mt-[40px] rounded-xl flex justify-center items-center flex-col">
+						<div className="min-h-[30px] h-[130px] w-[130px] bg-[#FFFFFF] rounded-[50%] flex justify-center items-center border-orange-700">
 							<img
 								src={pix}
 								alt=""
-								className="w-[70%]"
+								className="w-[70px]"
 							/>
 						</div>
 						<div>
@@ -35,12 +35,12 @@ const Service = () => {
 							<FaArrowRight />
 						</div>
 					</div>
-					<div className=" h-[100%] lg:h-[80%]  bg-[#E8F6FF] mt-[40px] rounded-xl flex justify-center items-center flex-col">
-						<div className="h-[30%] w-[40%] bg-[#FFFFFF] rounded-[50%] flex justify-center items-center ">
+					<div className=" h-[100%] lg:h-[95%]  bg-[#E8F6FF] mt-[40px] rounded-xl flex justify-center items-center flex-col">
+						<div className="min-h-[30px] h-[130px] w-[130px]  bg-[#FFFFFF] rounded-[50%] flex justify-center items-center ">
 							<img
 								src={pix1}
 								alt=""
-								className="w-[70%]"
+								className="w-[70px]"
 							/>
 						</div>
 						<div>
@@ -59,12 +59,12 @@ const Service = () => {
 							<FaArrowRight />
 						</div>
 					</div>
-					<div className=" h-[100%] lg:h-[80%]  bg-[#E8F6FF] mt-[40px] rounded-xl flex justify-center items-center flex-col">
-						<div className="h-[30%] w-[40%] bg-[#FFFFFF] rounded-[50%] flex justify-center items-center ">
+					<div className=" h-[100%] lg:h-[95%]  bg-[#E8F6FF] mt-[40px] rounded-xl flex justify-center items-center flex-col">
+						<div className="min-h-[30px] h-[130px] w-[130px]  bg-[#FFFFFF] rounded-[50%] flex justify-center items-center ">
 							<img
 								src={pix2}
 								alt=""
-								className="w-[70%]"
+								className="w-[70px]"
 							/>
 						</div>
 						<div>
@@ -83,12 +83,12 @@ const Service = () => {
 							<FaArrowRight />
 						</div>
 					</div>
-					<div className=" h-[100%] lg:h-[80%]  bg-[#E8F6FF] mt-[40px] rounded-xl flex justify-center items-center flex-col">
-						<div className="h-[30%] w-[40%] bg-[#FFFFFF] rounded-[50%] flex justify-center items-center ">
+					<div className=" h-[100%] lg:h-[95%]  bg-[#E8F6FF] mt-[40px] rounded-xl flex justify-center items-center flex-col">
+						<div className="min-h-[30px] h-[130px] w-[130px]  bg-[#FFFFFF] rounded-[50%] flex justify-center items-center ">
 							<img
 								src={pix3}
 								alt=""
-								className="w-[70%]"
+								className="w-[70px]"
 							/>
 						</div>
 						<div>

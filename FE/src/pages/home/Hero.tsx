@@ -30,7 +30,7 @@ const Hero = () => {
 					</div>
 				</div>
 				<div className="w-[100%]  lg:w-[55%] h-[100%]  relative">
-					<div className="absolute top-[64%] right-[60%] w-[35%] h-[12%] bg-yellow-500 rounded-3xl flex justify-center items-center">
+					<div className="absolute top-[64%] right-[50%] w-[250px] h-[12%] bg-yellow-500 rounded-3xl flex justify-center items-center">
 						<div className="w-[90%] flex ">
 							<div className="h bg-red-500 w-[25%] h-[50px] items-center justify-center flex rounded-xl">
 								<AiOutlineSafetyCertificate
@@ -45,7 +45,7 @@ const Hero = () => {
 						</div>
 					</div>
 
-					<div className="absolute top-[45%] right-[50%] w-[35%] h-[12%] bg-yellow-500 rounded-3xl flex justify-center items-center">
+					<div className="absolute top-[45%] right-[50%] w-[250px] h-[12%] bg-yellow-500 rounded-3xl flex justify-center items-center">
 						<div className="w-[90%] flex">
 							<div className="h bg-red-500 w-[25%] h-[50px] items-center justify-center flex rounded-xl">
 								<TbClock24
@@ -60,7 +60,7 @@ const Hero = () => {
 						</div>
 					</div>
 
-					<div className="absolute top-[23%] right-[50%] w-[300px]  h-[12%] bg-yellow-500 rounded-3xl flex justify-center items-center ">
+					<div className="absolute top-[23%] right-[50%] w-[250px]  h-[12%] bg-yellow-500 rounded-3xl flex justify-center items-center ">
 						<div className="w-[90%] flex">
 							<div className="h bg-red-500 w-[25%] h-[50px] items-center justify-center flex rounded-xl">
 								<GiSurferVan
